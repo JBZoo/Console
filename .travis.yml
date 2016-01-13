@@ -12,7 +12,7 @@ matrix:
 
 script:
   - composer update-all
-  - composer show -i
+  - composer show -i | grep jbzoo
   - composer test
 
   # Visual tests

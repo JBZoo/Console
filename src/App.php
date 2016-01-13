@@ -28,14 +28,14 @@ class App extends Application
     /**
      * @var array
      */
-    private $_logo = "<info>
-       _ ____ ______              _____                      _
-      | |  _ |___  /             / ____|                    | |
-      | | |_) | / / ___   ___   | |     ___  _ __  ___  ___ | | ___
-  _   | |  _ < / / / _ \ / _ \  | |    / _ \| '_ \/ __|/ _ \| |/ _ \
- | |__| | |_) / /_| (_) | (_) | | |___| (_) | | | \__ | (_) | |  __/
-  \____/|____/_____\___/ \___/   \_____\___/|_| |_|___/\___/|_|\___|</info> <comment>by SmetDenis</comment>";
-
+    private $_logo = array(
+        "       _ ____ ______              _____                      _       ",
+        "      | |  _ |___  /             / ____|                    | |      ",
+        "      | | |_) | / / ___   ___   | |     ___  _ __  ___  ___ | | ___  ",
+        "  _   | |  _ < / / / _ \ / _ \  | |    / _ \| '_ \/ __|/ _ \| |/ _ \ ",
+        " | |__| | |_) / /_| (_) | (_) | | |___| (_) | | | \__ | (_) | |  __/ ",
+        "  \____/|____/_____\___/ \___/   \_____\___/|_| |_|___/\___/|_|\___| ",
+    );
 
     /**
      * Register commads by directory path
@@ -87,6 +87,6 @@ class App extends Application
      */
     public function getLongVersion()
     {
-        return '<info>' . $this->_logo . '</info>';
+        return '<info>' . implode(PHP_EOL, $this->_logo) . '</info> <comment>by SmetDenis</comment>';
     }
 }
