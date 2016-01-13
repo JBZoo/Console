@@ -87,6 +87,9 @@ class App extends Application
      */
     public function getLongVersion()
     {
-        return '<info>' . implode(PHP_EOL, $this->_logo) . '</info> <comment>by SmetDenis</comment>';
+        $logo   = '<info>' . implode('</info>' . PHP_EOL . '<info>', $this->_logo) . '</info>';
+        $author = '<comment>by SmetDenis</comment>';
+
+        return $logo . ' ' . $author;
     }
 }

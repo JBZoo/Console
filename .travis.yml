@@ -12,12 +12,10 @@ matrix:
 
 script:
   - composer update-all
-  - composer show -i | grep jbzoo
   - composer test
 
   # Visual tests
   - php ./bin/jbzoo
-  - php ./bin/jbzoo test
   - php ./bin/jbzoo test --option=ytrewq
 
 after_script:

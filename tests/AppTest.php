@@ -25,7 +25,6 @@ class AppTest extends PHPUnit
 
     public function testExecute()
     {
-        skip();
         $uniq = uniqid('', true);
 
         $output = cmd('php ./bin/jbzoo test', array(
