@@ -14,5 +14,10 @@ script:
   - composer update-all
   - composer test
 
+  # Visual tests
+  - php ./bin/jbzoo
+  - php ./bin/jbzoo test
+  - php ./bin/jbzoo test --option=ytrewq
+
 after_script:
   - composer coveralls
