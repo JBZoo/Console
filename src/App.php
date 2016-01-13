@@ -1,12 +1,12 @@
 <?php
 /**
- * JBZoo PHPUnit
+ * JBZoo Console
  *
  * This file is part of the JBZoo CCK package.
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  *
- * @package   PHPUnit
+ * @package   Console
  * @license   MIT
  * @copyright Copyright (C) JBZoo.com,  All rights reserved.
  * @link      https://github.com/JBZoo/Console
@@ -28,12 +28,13 @@ class App extends Application
     /**
      * @var array
      */
-    private $_logo = "       _ ____ ______              _____                      _
+    private $_logo = "<info>
+       _ ____ ______              _____                      _
       | |  _ |___  /             / ____|                    | |
       | | |_) | / / ___   ___   | |     ___  _ __  ___  ___ | | ___
   _   | |  _ < / / / _ \ / _ \  | |    / _ \| '_ \/ __|/ _ \| |/ _ \
  | |__| | |_) / /_| (_) | (_) | | |___| (_) | | | \__ | (_) | |  __/
-  \____/|____/_____\___/ \___/   \_____\___/|_| |_|___/\___/|_|\___| <comment>by SmetDenis</comment>";
+  \____/|____/_____\___/ \___/   \_____\___/|_| |_|___/\___/|_|\___|</info> <comment>by SmetDenis</comment>";
 
 
     /**
