@@ -12,6 +12,7 @@ matrix:
 
 script:
   - composer update-all
+  - composer show -i
   - composer test
 
   # Visual tests
