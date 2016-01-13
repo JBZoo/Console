@@ -13,19 +13,26 @@
  * @author    Denis Smetannikov <denis@jbzoo.com>
  */
 
-namespace JBZoo\Console;
+namespace JBZoo\PHPUnit;
 
 /**
- * Class Console
- * @package JBZoo\Console
+ * Class AppTest
+ * @package JBZoo\PHPUnit
  */
-class Package
+class AppTest extends PHPUnit
 {
-    /**
-     * @return string
-     */
-    public function doSomeStreetMagic()
+
+
+    public function testExecute()
     {
-        return 'street magic';
+        $uniq = uniqid('', true);
+
+        $output = cmd('php ./bin/jbzoo test', array(
+            'option' => $uniq,
+        ));
+
+        isContain($uniq, $output);
+        isContain('qwerty', $output);
+        isContain('Success', $output);
     }
 }
