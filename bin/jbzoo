@@ -55,4 +55,8 @@ if ($dir = FS::real(__DIR__ . '/../src/Command')) {
     $application->registerCommands($dir);
 }
 
+if ($dir = FS::real(__DIR__ . '/../../../../src/Command')) {
+    $application->registerCommands($dir);
+}
+
 $application->run();
