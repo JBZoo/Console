@@ -1,7 +1,21 @@
 #!/usr/bin/env php
 <?php
+/**
+ * JBZoo Console
+ *
+ * This file is part of the JBZoo CCK package.
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ * @package   Console
+ * @license   MIT
+ * @copyright Copyright (C) JBZoo.com,  All rights reserved.
+ * @link      https://github.com/JBZoo/Console
+ * @author    Denis Smetannikov <denis@jbzoo.com>
+ */
 
-use JBZoo\Console\App;
+namespace JBZoo\Console;
+
 use JBZoo\Utils\FS;
 
 umask(0000);
@@ -29,12 +43,11 @@ if (!class_exists('JBZoo\Console\App')) {
 
 $application = new App('JBZoo Console', '1.x-dev');
 
-
-if ($dir = FS::real(PROJECT_TESTS . '/Command')) {
+if (defined('PROJECT_TESTS') && $dir = FS::real(PROJECT_TESTS . '/Command')) {
     $application->registerCommands($dir);
 }
 
-if ($dir = FS::real(PROJECT_SRC . '/Command')) {
+if (defined('PROJECT_SRC') && $dir = FS::real(PROJECT_SRC . '/Command')) {
     $application->registerCommands($dir);
 }
 
