@@ -27,12 +27,13 @@ $vendorPaths = array(
     realpath(__DIR__ . '/../../vendor/autoload.php'),
     realpath(__DIR__ . '/../../../vendor/autoload.php'),
     realpath(__DIR__ . '/../../../../vendor/autoload.php'),
+    realpath(__DIR__ . '/../../../../../vendor/autoload.php'),
     realpath('./vendor/autoload.php'),
 );
 
-foreach ($vendorPaths as $file) {
-    if (file_exists($file)) {
-        require_once $file;
+foreach ($vendorPaths as $vendorPath) {
+    if (file_exists($vendorPath)) {
+        require_once $vendorPath;
         break;
     }
 }
@@ -42,6 +43,11 @@ if (!class_exists('JBZoo\Console\App')) {
 }
 
 $application = new App('JBZoo Console', '1.x-dev');
+
+$commands = (array)glob(dirname($vendorPath) . '/jbzoo/*/*/Command');
+foreach ($commands as $commandDir) {
+    $application->registerCommands($commandDir);
+}
 
 if (defined('PROJECT_TESTS') && $dir = FS::real(PROJECT_TESTS . '/Command')) {
     $application->registerCommands($dir);
