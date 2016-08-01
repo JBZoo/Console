@@ -5,6 +5,14 @@
 [![License](https://poser.pugx.org/JBZoo/Console/license)](https://packagist.org/packages/JBZoo/Console)
 [![Latest Stable Version](https://poser.pugx.org/JBZoo/Console/v/stable)](https://packagist.org/packages/JBZoo/Console) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/JBZoo/Console/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/JBZoo/Console/?branch=master)
 
-### License
+
+## Unit tests and check code style
+```sh
+make
+make test-all
+```
+
+
+## License
 
 MIT
